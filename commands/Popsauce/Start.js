@@ -18,6 +18,6 @@ module.exports.run = (client, message, args) => {
 
 module.exports.help = {
   name: "start",
-  description: "Start the popsauce game",
+  description: "Lance une partie de popsauce",
   args: false,
 };

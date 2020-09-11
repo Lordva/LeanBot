@@ -16,6 +16,6 @@ module.exports.run = (client, message, args) => {
 
 module.exports.help = {
   name: "join",
-  description: "Join the popsauce game",
+  description: "Rejoin la partie de popsauce",
   args: false,
 };

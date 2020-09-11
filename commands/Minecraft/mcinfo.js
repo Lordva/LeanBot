@@ -1,7 +1,8 @@
 module.exports.run = (client, message, args) => {
   const mc = require('minecraft-server-util');
+  {ip,map} require ('./mcips.js');
 
-  mc.query('play.nefers.fr', { port: 10042 }) // port is optional
+  mc.query(`${ip}`, { port: 10042 }) // port is optional
     .then((response) => {
         console.log(response);
         const embed = {
@@ -15,7 +16,7 @@ module.exports.run = (client, message, args) => {
             },
             {
               "name": "Map",
-              "value": "[clique ici pour accéder à la map en ligne](http://map.nefers.fr:40012/)"
+              "value": `[clique ici pour accéder à la map en ligne](${map})`
             },
             {
               "name": "Joueurs en ligne",

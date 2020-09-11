@@ -1,9 +1,9 @@
-const { Client, Collection } = require('discord.js'); // Appel des ressources requises
+const Discord = require('discord.js'); // Appel des ressources requises
 const { TOKEN, PREFIX } = require('./config');
 const { readdirSync } = require('fs');
 
-const client = new Client();
-client.commands = new Collection();
+const client = new Discord.Client();
+client.commands = new Discord.Collection();
 
 launch = false; // création de la variable qui définit si le jeu est en cours
 
@@ -33,6 +33,10 @@ client.on('message', message => { //détéction des commandes demandés par un u
 
   if(command.help.args && !args.length){
     return message.channel.send("Des arguments sont requis !")
+  }
+
+  if(command.help.admin && !message.member.hasPermission('BAN_MEMBERS')){
+    return message.channel.send("Tu n'a pas les permitions nécessaires !");
   }
 
   command.run(client, message, args);

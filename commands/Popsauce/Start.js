@@ -20,4 +20,5 @@ module.exports.help = {
   name: "start",
   description: "Lance une partie de popsauce",
   args: false,
+  admin: false
 };

@@ -6,4 +6,5 @@ module.exports.help = {
   name:"ping",
   description: "Répond Pong !",
   args: false,
+  admin: false
 };

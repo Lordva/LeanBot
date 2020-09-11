@@ -1,6 +1,6 @@
 module.exports.run = (client, message, args) => {
   const mc = require('minecraft-server-util');
-  {ip,map} require ('./mcips.js');
+ const {ip,map} = require ('./mcips.json');
 
   mc.query(`${ip}`, { port: 10042 }) // port is optional
     .then((response) => {

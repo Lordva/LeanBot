@@ -36,7 +36,7 @@ client.on('message', message => { //détéction des commandes demandés par un u
   }
 
   if(command.help.admin && !message.member.hasPermission('BAN_MEMBERS')){
-    return message.channel.send("Tu n'a pas les permitions nécessaires !");
+    return message.channel.send("Tu n'a pas les permissions nécessaires !");
   }
 
   command.run(client, message, args);

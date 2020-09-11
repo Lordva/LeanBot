@@ -10,9 +10,9 @@ module.exports.run = (client,args,message) => {
   
     await rcon.connect();
   
-    await rcon.run(args.content); // Tells all players in the server "Hello, world!"
+    await rcon.run(args.content); 
   
-    return rcon.close(); // Make sure to close the connection after use
+    return rcon.close(); 
   };
 
   rconExample();

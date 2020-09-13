@@ -1,9 +1,9 @@
-module.exports.run = (client,args,message) => {
+module.exports.run = (client,args,message) => { //définir les ressources requises.
   const { RCON } = require('minecraft-server-util');
   const {ip,pass} = require ('./mcips.json');
-  const cmdmc = client.channels.cache.find(channel => channel.name === 'mc-log');
+  const cmdmc = client.channels.cache.find(channel => channel.name === 'mc-log'); //recherche un salon discord s'appellant 'mc-log'.
 
-  const cmd = {
+  const cmd = { //définit l'embed content les informations à renvoyer.
     "color": 3366179,
     "fields": [
       {
@@ -13,22 +13,22 @@ module.exports.run = (client,args,message) => {
     ]
   };
   
-  const rconExample = async (message) => {
+  const rconExample = async (message) => { //execute la commande demandée.
 
-    const rcon = new RCON(`${ip}`, { port: 40729, password: `${pass}` });
+    const rcon = new RCON(`${ip}`, { port: 40729, password: `${pass}` }); //se connecte au RCON du serveur minecraft.
 
-    args.content = args.content.slice(6);
-    console.log(args.content);
-    cmdmc.send({embed : cmd})
+    args.content = args.content.slice(6);//retire le nombre de carractères correspondant au préfix et l'espace avant la commande.
+    console.log(args.content);//affiche les arguments qui vont êtres envoyés au serveur dans la consolle.
+    cmdmc.send({embed : cmd})//envoie dans le salon discord mc-log la commande executée sur le serveur.
   
-    await rcon.connect();
+    await rcon.connect();//établis une connection au RCON.
   
-    await rcon.run(args.content); 
+    await rcon.run(args.content); //envoie la commande demandée.
   
-    return rcon.close(); 
+    return rcon.close(); //se déconnecte du RCON.
   };
 
-  rconExample();
+  rconExample();//execute la fonction ci-dessus.
 };
 
 module.exports.help = {

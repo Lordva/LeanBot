@@ -1,6 +1,7 @@
 const Discord = require('discord.js'); // Appel des ressources requises
 const { TOKEN, PREFIX } = require('./config');
 const { readdirSync } = require('fs');
+const { cmd } = require('./commands/Minecraft/mcrcon.js');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -24,6 +25,7 @@ const loadCommands = (dir = "./commands/") => { //Récupération des commandes s
 loadCommands(); //Chargement des commandes récupéres
 
 client.on('message', message => { //détéction des commandes demandés par un utilisateur 
+ 
   if (!message.content.startsWith(PREFIX) || message.author.bot) return;
   const args = message.content.slice(PREFIX.length).split(/ +/g);
   const commandName = args.shift().toLowerCase();
@@ -38,6 +40,10 @@ client.on('message', message => { //détéction des commandes demandés par un u
   if(command.help.admin && !message.member.hasPermission('BAN_MEMBERS')){
     return message.channel.send("Tu n'a pas les permissions nécessaires !");
   }
+
+  if(command.help.delete){
+     message.delete();
+  };
 
   command.run(client, message, args);
 });

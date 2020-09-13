@@ -36,4 +36,6 @@ module.exports.help = {
   name:"mc",
   description: "Donne les info du serveur minecraft.",
   args: false,
+  admin: false,
+  delete: false
 };

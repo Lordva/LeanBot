@@ -8,7 +8,9 @@ client.commands = new Discord.Collection();
 
 launch = false; // création de la variable qui définit si le jeu est en cours.
 init = true;
-Players = ["gbg", "hghgh", "hghgh"]; // variable des joueurs.
+Players = ["gbg", "hghgh"]; // variable des joueurs.
+Admin = [];
+Score = [0,0,0,0,0,0,0,0,0,0];
 
 const loadCommands = (dir = "./commands/") => { //récupération des commandes se situant dans d'autres fichiers.js.
   readdirSync(dir).forEach(dirs => {

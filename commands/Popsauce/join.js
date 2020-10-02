@@ -25,5 +25,5 @@ module.exports.help = {
   description: "Rejoin la partie de popsauce",
   args: false,
   admin: false,
-  delete: true
+  delete: false
 };

@@ -6,15 +6,23 @@ image = 0;
 module.exports = (client, message) => {
   var mod = require('../../main');
   var p = mod.Players.includes(message.author.id);
-  var a = mod.Admin.includes(message.author.id);
   const popsauce = client.channels.cache.find(channel => channel.name === 'popsauce');
   const joinstart = client.channels.cache.find(channel => channel.name === 'join-start');
 
   if(message.content.toLowerCase() === String([mod.rep[image]]) && launch === true && !message.author.bot && !message.content.startsWith(PREFIX) && p === true){
     popsauce.send("Bonne réponse");
-    popsauce.send("index du joueur " + mod.Players.indexOf(message.author.id));
     mod.Score[mod.Players.indexOf(message.author.id)] = mod.Score[mod.Players.indexOf(message.author.id)] + 1
-    popsauce.send("score du joueur " + mod.Score[mod.Players.indexOf(message.author.id)])
+    popsauce.send("Votre score est de " + mod.Score[mod.Players.indexOf(message.author.id)])
+
+    if(mod.Score[mod.Players.indexOf(message.author.id)] >= 10){
+      popsauce.send("<@"+ message.author.id + ">"+" à gagné la partie.");
+      mod.Players = ["hghgh", "hghgh"];
+      mod.Admin = [];
+      mod.Score = [0,0,0,0,0,0,0,0,0,0];
+      launch = false;
+      return;
+    }
+
       image = Math.floor(Math.random() * Math.floor(mod.images.length));
     console.log([mod.rep[image]]);
       const pic = new Discord.MessageEmbed()

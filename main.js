@@ -7,10 +7,14 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
 launch = false; // création de la variable qui définit si le jeu est en cours.
-init = true;
-Players = ["gbg", "hghgh"]; // variable des joueurs.
-Admin = [];
-Score = [0,0,0,0,0,0,0,0,0,0];
+
+module.exports = {
+  Players : ["gbg", "hghgh"], // variable des joueurs.
+  Admin : [],
+  Score : [0,0,0,0,0,0,0,0,0,0],
+  images : ['https://media.discordapp.net/attachments/706571623741784095/755244246562504834/oot.png','https://media.discordapp.net/attachments/706571623741784095/755244712624914442/super-meat-boy-two-column-01-ps4-eu-29sep15.png','https://cdn.discordapp.com/attachments/706571623741784095/759970386049499186/zJho2zyv_400x400.png'],
+  rep : ['ocarina of time','super meat boy','overwatch']
+}
 
 const loadCommands = (dir = "./commands/") => { //récupération des commandes se situant dans d'autres fichiers.js.
   readdirSync(dir).forEach(dirs => {

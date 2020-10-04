@@ -1,8 +1,8 @@
 module.exports.run = (client, message) => {
   const mc = require('minecraft-server-util');//appel des ressources requises.
-  const {IP,MAP} = require ('./mcips.js');//appel de valeurs sécurisées dans un autre ficher.
+  const {ip,map} = require ('./mcips.json');//appel de valeurs sécurisées dans un autre ficher.
 
-    mc.ping(`${IP}`, { port: 10042 }) //obtient les informations du serveur minecraft dont l'ip est entrée.
+    mc.ping(`${ip}`, { port: 10042 }) //obtient les informations du serveur minecraft dont l'ip est entrée.
     .then((response) => { //définit les informations obtenus comme 'response'.
       console.log(response);//affiche les informations récupérées dans la consolle.
       const infos = { // embed du message à renvoyer.
@@ -16,7 +16,7 @@ module.exports.run = (client, message) => {
           },
           {
             "name": "Map",
-            "value": `[clique ici pour accéder à la map en ligne](${MAP})` //affiche le site de la map du serveur.
+            "value": `[clique ici pour accéder à la map en ligne](${map})` //affiche le site de la map du serveur.
           },
           {
             "name": "Joueurs en ligne",

@@ -1,11 +1,9 @@
 module.exports.run = (client, message, args) => {
 
-  var mod = require('../../main');
-  const popsauce = client.channels.cache.find(channel => channel.name === 'popsauce');
-  var p = mod.Players.includes(message.author.id);
-  var a = mod.Admin.includes(message.author.id);
+  var mod = require('../../main');//importe les variables relatives au jeu depuis le fichier main.js.
+  const popsauce = client.channels.cache.find(channel => channel.name === 'popsauce');//l'id du salon salon nomé join-start es stocké dans la variable popsauce.
   
-  const nb = mod.Players.length;
+  const nb = mod.Players.length; //on défini la longueur du tableau des scores en fonction du nombre de joueurs présents.
 
   switch (nb) {
   case 3:

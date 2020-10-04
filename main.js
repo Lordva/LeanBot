@@ -1,5 +1,5 @@
 const Discord = require('discord.js'); // appel des ressources requises.
-const { TOKEN, PREFIX } = require('./config');
+const { TOKEN } = require('./config');
 const { readdirSync } = require('fs');
 
 

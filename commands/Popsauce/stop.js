@@ -6,7 +6,7 @@ module.exports.run = (client, message, args) => {
   var a = mod.Admin.includes(message.author.id);//la variable a vaut l'index où est stocké le joueur qui a lancé la partie.
 
   if(launch === true && !message.author.bot && p === true && a === true){//si la partie est lancée que l'auteur n'est pas un bot, qu'il est un joueur et qu'il est le joueur qui a lancé la partie.
-    mod.Players = ["hghgh", "hghgh"];//on reset les joueurs.
+    mod.Players = ["", ""];//on reset les joueurs.
     mod.Admin = [];//on reset le joueur qui a lancé la partie.
     mod.Score = [0,0,0,0,0,0,0,0,0,0];//on reset le score.
     launch = false;//on défini l'état de la partie(non lancée).

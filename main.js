@@ -9,11 +9,12 @@ client.commands = new Discord.Collection();
 launch = false; // création de la variable qui définit si le jeu est en cours.
 
 module.exports = {
-  Players : ["gbg", "hghgh"], // liste des joueurs.
+  Players : ["", ""], // liste des joueurs.
   Admin : [], //joueur qui a lancé la partie.
   Score : [0,0,0,0,0,0,0,0,0,0],//scores des joueurs.
   rep : ['ocarina of time','super meat boy','overwatch'],//liste de réponses associés aux images.
   repalias : ['oot','super meat boy','overwatch'],//aliases pour les réponses
+  repalias2:['the legend of zelda ocarina of time','super meat boy','overwatch'],//aliases pour les réponses
   imgname : ['oot','super_meat_boy','ow'] //nom des images stockés dans les fichiers locaux du bot.
 }
 

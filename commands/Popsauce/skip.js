@@ -8,13 +8,15 @@ module.exports.run = (client, message, args) => {
   var a = mod.Admin.includes(message.author.id);//la variable a vaut l'index où est stocké le joueur qui à lancé la partie.
 
   if(launch === true && !message.author.bot && a === true && p === true){//si le partie est lancée que l'auteur du message n'est pas un bot et qu'il est le joueur qui a lancé la partie.
-    image = Math.floor(Math.random() * Math.floor(mod.images.length));//on choisi une image au hasard.
+    image = Math.floor(Math.random() * Math.floor(mod.imgname.length));//on choisi une image au hasard.
     console.log([mod.rep[image]]);
     //on affiche l'image choisie dans un embed.
+    const img = new Discord.MessageAttachment('images/'+mod.imgname[image]+'.png');
     const pic = new Discord.MessageEmbed()
     .setDescription("```" + String([mod.rep[image]]) + "```")
     .setColor(3366179)
-    .setImage(String([mod.images[image]]))
+    .attachFiles(img)
+    .setImage('attachment://'+mod.imgname[image]+'.png')
     .setAuthor("D'où viens cette image", null, null)
     popsauce.send(pic);
   }else{

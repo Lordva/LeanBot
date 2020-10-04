@@ -24,13 +24,15 @@ module.exports.run = (client, message, args) => {
       joinstart.send('La partie va démarrer avec ' + mod.Players.length + ' joueurs.\nVeuillez vous rendre dans ' +"<#" + popsauce + ">");//envoie un message annoncant le début de la partie avec le nombre de joueurs y participant.
       mod.Admin.push(message.author.id);//on retiens quel joueur a lancé la partie.
       launch = true;//on stock l'état de la partie (lancée) dans une variable.
-      image = Math.floor(Math.random() * Math.floor(mod.images.length));//on choisi une image au hasard.
+      image = Math.floor(Math.random() * Math.floor(mod.imgname.length));//on choisi une image au hasard.
       console.log([mod.rep[image]]);
       //on affiche l'image choisie dans un embed.
+      const img = new Discord.MessageAttachment('images/'+mod.imgname[image]+'.png');
       const pic = new Discord.MessageEmbed()
       .setDescription("```" + String([mod.rep[image]]) + "```")
       .setColor(3366179)
-      .setImage(String([mod.images[image]]))
+      .attachFiles(img)
+      .setImage('attachment://'+mod.imgname[image]+'.png')
       .setAuthor("D'où viens cette image", null, null)
       popsauce.send(pic);
     }else {//si il y a moins de 3 joueurs.

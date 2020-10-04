@@ -23,13 +23,15 @@ module.exports = (client, message) => {
       return;//on sort de la boucle pour ne pas effectuer le reste.
     }
 
-      image = Math.floor(Math.random() * Math.floor(mod.images.length));//on choisi une image au hasard.
+      image = Math.floor(Math.random() * Math.floor(mod.imgname.length));//on choisi une image au hasard.
       console.log([mod.rep[image]]);
       //on affiche l'image choisie dans un embed.
+      const img = new Discord.MessageAttachment('images/'+mod.imgname[image]+'.png');
       const pic = new Discord.MessageEmbed()
       .setDescription("```" + String([mod.rep[image]]) + "```")
       .setColor(3366179)
-      .setImage(String([mod.images[image]]))
+      .attachFiles(img)
+      .setImage('attachment://'+mod.imgname[image]+'.png')
       .setAuthor("D'où viens cette image", null, null)
       popsauce.send(pic);
   }else{//si le message envoyé par un joueur ne contient pas la bonne réponse.

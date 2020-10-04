@@ -1,4 +1,4 @@
-module.exports.run = (client,args,) => { //définir les ressources requises.
+module.exports.run = (client,args,message) => { //définir les ressources requises.
   const { RCON } = require('minecraft-server-util');
   const {PASS,IPRCON} = require ('./mcips.js');
   const cmdmc = client.channels.cache.find(channel => channel.name === 'mc-log'); //recherche un salon discord s'appellant 'mc-log'.
@@ -13,9 +13,9 @@ module.exports.run = (client,args,) => { //définir les ressources requises.
     ]
   };
   
-  const rconExample = async () => { //execute la commande demandée.
+  const rconExample = async (message) => { //execute la commande demandée.
 
-    const rcon = new RCON(IPRCON, { port: 40729, password: PASS }); //se connecte au RCON du serveur minecraft.
+    const rcon = new RCON(`${IPRCON}`, { port: 40729, password: `${PASS}` }); //se connecte au RCON du serveur minecraft.
 
     args.content = args.content.slice(6);//retire le nombre de carractères correspondant au préfix et l'espace avant la commande.
     console.log(args.content);//affiche les arguments qui vont êtres envoyés au serveur dans la consolle.

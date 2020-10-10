@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports.run = (client, message, args) => {
-  var mod = require('../../main');//importe les variables relatives au jeu depuis le fichier main.js.
+  var mod = require('../../lists');//importe les variables relatives au jeu depuis le fichier main.js.
   const popsauce = client.channels.cache.find(channel => channel.name === 'popsauce');//l'id du salon salon nomé join-start es stocké dans la variable popsauce.
   const joinstart = client.channels.cache.find(channel => channel.name === 'join-start');//l'id du salon salon nomé join-start es stocké dans la variable joinstart.
   var p = mod.Players.includes(message.author.id);//la variable p vaut l'index où sont stockés les joueurs.

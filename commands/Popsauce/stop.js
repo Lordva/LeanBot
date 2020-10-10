@@ -1,6 +1,6 @@
 module.exports.run = (client, message, args) => {
 
-  var mod = require('../../main');//importe les variables relatives au jeu depuis le fichier main.js.
+  var mod = require('../../lists');//importe les variables relatives au jeu depuis le fichier main.js.
   const joinstart = client.channels.cache.find(channel => channel.name === 'join-start');//l'id du salon salon nomé join-start es stocké dans la variable joinstart.
   var p = mod.Players.includes(message.author.id);//la variable p vaut l'index où sont stockés les joueurs.
   var a = mod.Admin.includes(message.author.id);//la variable a vaut l'index où est stocké le joueur qui a lancé la partie.

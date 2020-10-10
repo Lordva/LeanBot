@@ -12,8 +12,9 @@ module.exports = (client, message) => {
   str2 = String([mod.repalias2[image]]).replace(/\s+/g, '');
   str1 = String([mod.repalias[image]]).replace(/\s+/g, '');
   str = String([mod.rep[image]]).replace(/\s+/g, '');
+  msg = message.content.replace(/\s+/g, '');
 
-  if(message.content.toLowerCase() === str | message.content.toLowerCase() === str1 | message.content.toLowerCase() === str2 && launch === true && !message.author.bot && !message.content.startsWith(PREFIX) && p === true){//si le message contient la bonne réponse que la partie est en cours que l'auteur n'est pas un bot, que la personne est un joueur et que que le message ne commence pas par le préfix.
+  if(msg.toLowerCase() === str | msg.toLowerCase() === str1 | msg.toLowerCase() === str2 && launch === true && !message.author.bot && !message.content.startsWith(PREFIX) && p === true){//si le message contient la bonne réponse que la partie est en cours que l'auteur n'est pas un bot, que la personne est un joueur et que que le message ne commence pas par le préfix.
     popsauce.send("Bonne réponse");
     mod.Score[mod.Players.indexOf(message.author.id)] = mod.Score[mod.Players.indexOf(message.author.id)] + 1 //on ajoute 1 au score
     popsauce.send("Votre score est de " + mod.Score[mod.Players.indexOf(message.author.id)])
@@ -39,7 +40,7 @@ module.exports = (client, message) => {
       .setAuthor("D'où viens cette image", null, null)
       popsauce.send(pic);
   }else{//si le message envoyé par un joueur ne contient pas la bonne réponse.
-    if(message.content.toLowerCase() !== String([mod.rep[image]]) && launch === true && !message.author.bot && !message.content.startsWith(PREFIX) && p === true){
+    if(msg.toLowerCase() !== str && launch === true && !message.author.bot && !message.content.startsWith(PREFIX) && p === true){
       popsauce.send("Mauvaise réponse");
       console.log([mod.rep[image]]);
     }

@@ -7,12 +7,10 @@ module.exports = (client, message) => {
   var mod = require('../../lists');//importe les variables relatives au jeu depuis le fichier main.js.
   var p = mod.Players.includes(message.author.id);//la variable p vaut l'index où sont stockés les joueurs.
   const popsauce = client.channels.cache.find(channel => channel.name === 'popsauce');//l'id du salon salon nomé join-start es stocké dans la variable popsauce.
-  const joinstart = client.channels.cache.find(channel => channel.name === 'join-start');
-  //l'id du salon salon nomé join-start es stocké dans la variable joinstart.
-  str2 = String([mod.repalias2[image]]).replace(/\s+/g, '');
-  str1 = String([mod.repalias[image]]).replace(/\s+/g, '');
-  str = String([mod.rep[image]]).replace(/\s+/g, '');
-  msg = message.content.replace(/\s+/g, '');
+  str2 = String([mod.repalias2[image]]).replace(/\s+/g, '');//on supprime les espaces entre les mots;
+  str1 = String([mod.repalias[image]]).replace(/\s+/g, '');//on supprime les espaces entre les mots;
+  str = String([mod.rep[image]]).replace(/\s+/g, '');//on supprime les espaces entre les mots;
+  msg = message.content.replace(/\s+/g, '');//on supprime les espaces entre les mots;
 
   if(msg.toLowerCase() === str | msg.toLowerCase() === str1 | msg.toLowerCase() === str2 && launch === true && !message.author.bot && !message.content.startsWith(PREFIX) && p === true){//si le message contient la bonne réponse que la partie est en cours que l'auteur n'est pas un bot, que la personne est un joueur et que que le message ne commence pas par le préfix.
     popsauce.send("Bonne réponse");

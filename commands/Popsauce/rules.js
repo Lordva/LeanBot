@@ -11,7 +11,7 @@ module.exports.run = (client) => {
           },
           {
             "name": "But du jeu:",
-            "value": "Le but du jeu est assez simple, une image apparaît et vous devez trouver d'où viens l'image.\nA chaque fois qu'un joueur trouve la bonne réponse, ce dernier gagne un point et l'image change.\nLe premier qui arrive à 10 points gagne la partie."
+            "value": "Le but du jeu est assez simple, une image apparaît et vous devez trouver d'où viens l'image.\nA chaque fois qu'un joueur trouve la bonne réponse, ce dernier gagne un point et l'image change.\nAttention, les caractères : - à é ù / + . ~ { } ( ) [ ] @ # = ne sont pas pris en compte, merci de ne pas les écrires dans vos réponces.  \nLe premier qui arrive à 10 points gagne la partie."
           },
           {
             "name": "Commandes utiles",

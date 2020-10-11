@@ -1,4 +1,4 @@
-module.exports.run = (client, message, args) => {
+module.exports.run = (message) => {
   const rules = {
     "title": "Liste des commandes",
     "description": "```Voici les commandes disponibles sur le serveur.```",
@@ -14,7 +14,7 @@ module.exports.run = (client, message, args) => {
       },
       {
         "name": "Commandes Popsauce",
-        "value": "$join permet de rejoindre une partie popsauce\n$reset réinitialise la liste de joueurs\n$start lance la partie\n$rules affiche les règles du jeu\n$score affiche le tableau des scores.\n$skip passe à la prochaine image\n$stop stop la partie en cours"
+        "value": "$join permet de rejoindre une partie popsauce\n$reset réinitialise la liste de joueurs\n$start lance la partie\n$rules affiche les règles du jeu\n$score affiche le tableau des scores.\n$skip passe à la prochaine image\n$stop stop la partie en cours\n$points permet de définir le nombre de points pour gagner la partie popsauce."
       }
     ]
   };

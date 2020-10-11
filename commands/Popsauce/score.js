@@ -1,4 +1,4 @@
-module.exports.run = (client, message, args) => {
+module.exports.run = (client) => {
 
   var mod = require('../../lists');//importe les variables relatives au jeu depuis le fichier main.js.
   const popsauce = client.channels.cache.find(channel => channel.name === 'popsauce');//l'id du salon salon nomé join-start es stocké dans la variable popsauce.

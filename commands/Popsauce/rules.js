@@ -1,4 +1,4 @@
-module.exports.run = (client, message) => {
+module.exports.run = (client) => {
   const joinstart = client.channels.cache.find(channel => channel.name === 'join-start');
       const rules = {
         "title": "Règles du jeu popsauce",
@@ -15,7 +15,7 @@ module.exports.run = (client, message) => {
           },
           {
             "name": "Commandes utiles",
-            "value": "$join permet de rejoindre la partie\n$rules affiche les règles du jeu\n$start permet de lancer la partie\n$reset permet de réinitialiser la liste des joueurs\n$score permet d'afficher un récapitulatif du score de tout les joueurs\n$skip permet de passer à l'image suivante si personne ne trouve (Attention, seul le modérateur de la partie peut effectuer cette commande)\n$stop arrête la partie en cours (Attention, seul le modérateur de la partie peut effectuer cette commande)"
+            "value": "$join permet de rejoindre la partie\n$rules affiche les règles du jeu\n$start permet de lancer la partie\n$reset permet de réinitialiser la liste des joueurs\n$score permet d'afficher un récapitulatif du score de tout les joueurs\n$points permet de définir le nombre de points pour gagner la partie.\n$skip permet de passer à l'image suivante si personne ne trouve (Attention, seul le modérateur de la partie peut effectuer cette commande)\n$stop arrête la partie en cours (Attention, seul le modérateur de la partie peut effectuer cette commande)"
           }
         ]
       };

@@ -7,7 +7,7 @@ module.exports.run = (client, message, args) => {
   joinstart.send("Nombre de points nécéssaires pour gagner la partie définis à "+args+" points.");
   }
 
-  if(launch === false && !message.author.bot && p === true){
+  if(launch === false && !message.author.bot && p === false){
     joinstart.send("Vous devez être dans la partie pour changer le nombre de points requis pour gagner la partie.");
   }
 }

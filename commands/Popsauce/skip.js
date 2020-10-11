@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message) => {
 
   var mod = require('../../lists');//importe les variables relatives au jeu depuis le fichier main.js.
   const popsauce = client.channels.cache.find(channel => channel.name === 'popsauce');//l'id du salon salon nomé join-start es stocké dans la variable popsauce.
@@ -14,7 +14,6 @@ module.exports.run = (client, message, args) => {
     //on affiche l'image choisie dans un embed.
     const img = new Discord.MessageAttachment('images/'+mod.imgname[image]+'.png');
     const pic = new Discord.MessageEmbed()
-    .setDescription("```" + String([mod.rep[image]]) + "```")
     .setColor(3366179)
     .attachFiles(img)
     .setImage('attachment://'+mod.imgname[image]+'.png')

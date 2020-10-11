@@ -31,7 +31,6 @@ module.exports = (client, message) => {
       //on affiche l'image choisie dans un embed.
       const img = new Discord.MessageAttachment('images/'+mod.imgname[image]+'.png');
       const pic = new Discord.MessageEmbed()
-      .setDescription("```" + String([mod.rep[image]]) + "```")
       .setColor(3366179)
       .attachFiles(img)
       .setImage('attachment://'+mod.imgname[image]+'.png')

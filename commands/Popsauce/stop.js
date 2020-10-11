@@ -1,13 +1,14 @@
 module.exports.run = (client, message) => {
 
-  var mod = require('../../lists');//importe les variables relatives au jeu depuis le fichier main.js.
+  var mod = require('../../configs/vars');
+  var list = require('../../configs/lists');//importe les variables relatives au jeu depuis le fichier main.js.
   const joinstart = client.channels.cache.find(channel => channel.name === 'join-start');//l'id du salon salon nomé join-start es stocké dans la variable joinstart.
   const popsauce = client.channels.cache.find(channel => channel.name === 'popsauce');;//l'id du salon salon nomé join-start es stocké dans la variable popsauce.
   var p = mod.Players.includes(message.author.id);//la variable p vaut l'index où sont stockés les joueurs.
   var a = mod.Admin.includes(message.author.id);//la variable a vaut l'index où est stocké le joueur qui a lancé la partie.
 
   if(launch === true && !message.author.bot && p === true && a === true){//si la partie est lancée que l'auteur n'est pas un bot, qu'il est un joueur et qu'il est le joueur qui a lancé la partie.
-  popsauce.send("La réponse était " +[mod.rep[image]]);
+  popsauce.send("La réponse était " +[list.rep[image]]);
     mod.Players = [];//on reset les joueurs.
     mod.Admin = [];//on reset le joueur qui a lancé la partie.
     mod.Score = [0,0,0,0,0,0,0,0,0,0];//on reset le score.

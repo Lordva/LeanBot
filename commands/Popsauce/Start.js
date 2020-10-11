@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 
 module.exports.run = (client, message) => {
-  var mod = require('../../lists');//importe les variables relatives au jeu depuis le fichier main.js.
+  var mod = require('../../configs/vars');//importe les variables relatives au jeu depuis le fichier main.js.
+  var list = require('../../configs/lists');
   const popsauce = client.channels.cache.find(channel => channel.name === 'popsauce');//l'id du salon salon nomé join-start es stocké dans la variable popsauce.
   const joinstart = client.channels.cache.find(channel => channel.name === 'join-start');//l'id du salon salon nomé join-start es stocké dans la variable joinstart.
   var p = mod.Players.includes(message.author.id);//la variable p vaut l'index où sont stockés les joueurs.
@@ -24,14 +25,14 @@ module.exports.run = (client, message) => {
       joinstart.send('La partie va démarrer avec ' + mod.Players.length + ' joueurs.\nVeuillez vous rendre dans ' +"<#" + popsauce + ">");//envoie un message annoncant le début de la partie avec le nombre de joueurs y participant.
       mod.Admin.push(message.author.id);//on retiens quel joueur a lancé la partie.
       launch = true;//on stock l'état de la partie (lancée) dans une variable.
-      image = Math.floor(Math.random() * Math.floor(mod.imgname.length));//on choisi une image au hasard.
-      console.log([mod.rep[image]]);
+      image = Math.floor(Math.random() * Math.floor(list.imgname.length));//on choisi une image au hasard.
+      console.log([list.rep[image]]);
       //on affiche l'image choisie dans un embed.
-      const img = new Discord.MessageAttachment('images/'+mod.imgname[image]+'.png');
+      const img = new Discord.MessageAttachment('images/'+list.imgname[image]+'.png');
       const pic = new Discord.MessageEmbed()
       .setColor(3366179)
       .attachFiles(img)
-      .setImage('attachment://'+mod.imgname[image]+'.png')
+      .setImage('attachment://'+list.imgname[image]+'.png')
       .setAuthor("D'où viens cette image", null, null)
       popsauce.send(pic);
     }else {//si il y a moins de 3 joueurs.

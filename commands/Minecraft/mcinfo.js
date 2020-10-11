@@ -1,6 +1,6 @@
 module.exports.run = (client, message) => {
   const mc = require('minecraft-server-util');//appel des ressources requises.
-  const {IP,MAP} = require ('../../mcips.js');//appel de valeurs sécurisées dans un autre ficher.
+  const {IP,MAP} = require ('../../configs/config');//appel de valeurs sécurisées dans un autre ficher.
 
     mc.ping(`${IP}`, { port: 10042 }) //obtient les informations du serveur minecraft dont l'ip est entrée.
     .then((response) => { //définit les informations obtenus comme 'response'.

@@ -1,6 +1,6 @@
 module.exports.run = (client,args,message) => { //définir les ressources requises.
   const { RCON } = require('minecraft-server-util');
-  const {PASS,IPRCON} = require ('../../mcips.js');
+  const {PASS,IPRCON} = require ('../../configs/config');
   const cmdmc = client.channels.cache.find(channel => channel.name === 'mc-log'); //recherche un salon discord s'appellant 'mc-log'.
 
   const cmd = { //définit l'embed contenant les informations à renvoyer.

@@ -1,9 +1,10 @@
 const Discord = require('discord.js');
-const { PREFIX } = require('../../config.js');
+const { PREFIX } = require('../../configs/config');
 image = 0;
 
 module.exports = (client, message) => {
-  var mod = require('../../lists');//importe les variables relatives au jeu depuis le fichier main.js.
+  var mod = require('../../configs/vars');//importe les variables relatives au jeu depuis le fichier main.js.
+  var list = require('../../configs/lists');
   var p = mod.Players.includes(message.author.id);//la variable p vaut l'index où sont stockés les joueurs.
   const popsauce = client.channels.cache.find(channel => channel.name === 'popsauce');//l'id du salon salon nomé join-start es stocké dans la variable popsauce.
   str2 = String([mod.repalias2[image]]).replace(/\s+/g, '');//on supprime les espaces entre les mots;
@@ -26,20 +27,20 @@ module.exports = (client, message) => {
       return;//on sort de la boucle pour ne pas effectuer le reste.
     }
 
-      image = Math.floor(Math.random() * Math.floor(mod.imgname.length));//on choisi une image au hasard.
-      console.log([mod.rep[image]]);
+      image = Math.floor(Math.random() * Math.floor(list.imgname.length));//on choisi une image au hasard.
+      console.log([list.rep[image]]);
       //on affiche l'image choisie dans un embed.
-      const img = new Discord.MessageAttachment('images/'+mod.imgname[image]+'.png');
+      const img = new Discord.MessageAttachment('images/'+list.imgname[image]+'.png');
       const pic = new Discord.MessageEmbed()
       .setColor(3366179)
       .attachFiles(img)
-      .setImage('attachment://'+mod.imgname[image]+'.png')
+      .setImage('attachment://'+list.imgname[image]+'.png')
       .setAuthor("D'où viens cette image", null, null)
       popsauce.send(pic);
   }else{//si le message envoyé par un joueur ne contient pas la bonne réponse.
     if(msg.toLowerCase() !== str && launch === true && !message.author.bot && !message.content.startsWith(PREFIX) && p === true){
       popsauce.send("Mauvaise réponse");
-      console.log([mod.rep[image]]);
+      console.log([list.rep[image]]);
     }
   }
   

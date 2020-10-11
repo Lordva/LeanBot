@@ -8,6 +8,7 @@ module.exports.run = (client, message, args) => {
   var a = mod.Admin.includes(message.author.id);//la variable a vaut l'index où est stocké le joueur qui à lancé la partie.
 
   if(launch === true && !message.author.bot && a === true && p === true){//si le partie est lancée que l'auteur du message n'est pas un bot et qu'il est le joueur qui a lancé la partie.
+  popsauce.send("La réponse était " +[mod.rep[image]]);
     image = Math.floor(Math.random() * Math.floor(mod.imgname.length));//on choisi une image au hasard.
     console.log([mod.rep[image]]);
     //on affiche l'image choisie dans un embed.

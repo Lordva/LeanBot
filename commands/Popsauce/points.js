@@ -4,7 +4,11 @@ module.exports.run = (client, message, args) => {
   var p = mod.Players.includes(message.author.id);//la variable p vaut l'index où sont stockés les joueurs.
   if(launch === false && !message.author.bot && p === true){
   mod.points = args;
-  joinstart.send("Nombre de points nécéssaires définit à "+args+" points.");
+  joinstart.send("Nombre de points nécéssaires pour gagner la partie définis à "+args+" points.");
+  }
+
+  if(launch === false && !message.author.bot && p === true){
+    joinstart.send("Vous devez être dans la partie pour changer le nombre de points requis pour gagner la partie.");
   }
 }
 

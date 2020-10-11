@@ -15,6 +15,10 @@ module.exports.run = (message) => {
       {
         "name": "Commandes Popsauce",
         "value": "$join permet de rejoindre une partie popsauce\n$reset réinitialise la liste de joueurs\n$start lance la partie\n$rules affiche les règles du jeu\n$score affiche le tableau des scores.\n$skip passe à la prochaine image\n$stop stop la partie en cours\n$points permet de définir le nombre de points pour gagner la partie popsauce."
+      },
+      {
+        "name": "Commandes poll",
+        "value": "$poll permet de créer des sondages\n"
       }
     ]
   };

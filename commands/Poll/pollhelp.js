@@ -16,5 +16,12 @@ exports.run = async (client, message) => {
     .setFooter('')
 
 message.channel.send(how);
-
 }
+
+module.exports.help = {
+    name:"pollhelp",
+    description: "gére la page d'aide de la commande $poll",
+    args: true,
+    admin: false,
+    delete: true
+  };

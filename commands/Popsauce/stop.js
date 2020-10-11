@@ -11,6 +11,7 @@ module.exports.run = (client, message, args) => {
     mod.Players = ['',''];//on reset les joueurs.
     mod.Admin = [];//on reset le joueur qui a lancé la partie.
     mod.Score = [0,0,0,0,0,0,0,0,0,0];//on reset le score.
+    mod.points = 10;
     launch = false;//on défini l'état de la partie(non lancée).
     joinstart.send(message.author.toString() + " a arrêté la partie");
     console.log(mod.Players);

@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const { PREFIX } = require('../../config.js');
-const { cmd } = require('../../commands/Minecraft/mcrcon.js');
 image = 0;
 
 module.exports = (client, message) => {
@@ -17,11 +16,12 @@ module.exports = (client, message) => {
     mod.Score[mod.Players.indexOf(message.author.id)] = mod.Score[mod.Players.indexOf(message.author.id)] + 1 //on ajoute 1 au score
     popsauce.send("Votre score est de " + mod.Score[mod.Players.indexOf(message.author.id)])
 
-    if(mod.Score[mod.Players.indexOf(message.author.id)] >= 10){//si un joueur à un score de 10 ou plus.
+    if(mod.Score[mod.Players.indexOf(message.author.id)] >= mod.points){//si un joueur à un score de 10 ou plus.
       popsauce.send("<@"+ message.author.id + ">"+" à gagné la partie.");//on annon sa victoire.
       mod.Players = ["",""];//on reset la partie.
       mod.Admin = [];
       mod.Score = [0,0,0,0,0,0,0,0,0,0];
+      mod.points = 10;
       launch = false;
       return;//on sort de la boucle pour ne pas effectuer le reste.
     }

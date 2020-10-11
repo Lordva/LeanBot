@@ -18,7 +18,7 @@ module.exports = (client, message) => {
 
     if(mod.Score[mod.Players.indexOf(message.author.id)] >= mod.points){//si un joueur à un score de 10 ou plus.
       popsauce.send("<@"+ message.author.id + ">"+" à gagné la partie.");//on annon sa victoire.
-      mod.Players = ["",""];//on reset la partie.
+      mod.Players = [];//on reset la partie.
       mod.Admin = [];
       mod.Score = [0,0,0,0,0,0,0,0,0,0];
       mod.points = 10;

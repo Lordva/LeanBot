@@ -19,7 +19,7 @@ module.exports.run = (client, message, args) => {
     ]
   };
 
-  joinstart.send({embed : rules}); //envoie l'embed contenant toute les informations dans le chat.
+  message.channel.send({embed : rules}); //envoie l'embed contenant toute les informations dans le chat.
 }
 
 module.exports.help = {
